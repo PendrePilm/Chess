@@ -93,7 +93,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #1f1f1f; /* Fond des inputs pour les rendre visibles */
-  color: #e0e0e0; /* Couleur du texte dans les inputs */
+  color: #e0e0e0; 
 }
 
 button {

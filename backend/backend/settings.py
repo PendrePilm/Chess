@@ -129,5 +129,6 @@ AUTH_USER_MODEL = "utilisateurs.User"
 
 CORS_ALLOWED_ORIGINS = [
     "http://192.168.1.18:8080",  
+    "http://10.4.17.129:8080",
 ]
 
