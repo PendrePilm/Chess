@@ -58,7 +58,7 @@ export default {
       console.log("Données d'inscription envoyées :", dataToSend);
 
       const response = await axios.post('http://localhost:8000/register/', dataToSend);
-      alert(response.data.message); // Affiche un message de succès
+      alert(response.data.message);
     } catch (error) {
       console.error("Erreur d'inscription :", error.response ? error.response.data : error.message);
       alert("Erreur lors de l'inscription. Veuillez réessayer.");
@@ -80,9 +80,9 @@ export default {
 }
 
 .auth-card {
-  background-color: rgba(0, 0, 0, 1); /* Cadre noir avec opacité */
-  border: 2px solid #00ff00; /* Bordure fluo verte */
-  box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00; /* Ombre lumineuse */
+  background-color: rgba(0, 0, 0, 1); 
+  border: 2px solid #00ff00; 
+  box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00; 
   padding: 20px;
   border-radius: 8px;
   width: 300px;

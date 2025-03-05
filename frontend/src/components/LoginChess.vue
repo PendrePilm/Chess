@@ -31,20 +31,26 @@ export default {
     };
   },
   methods: {
-    async login() {
-      try {
-        const response = await axios.post('http://localhost:8000/login/', {
-          email: this.email,
-          password: this.password,
-        });
-        console.log(response.data.message);
-        this.$router.push('/menu');
-      } catch (error) {
-        console.error("Erreur de connexion :", error.response ? error.response.data : error.message);
-      }
-    },
+  async login() {
+    try {
+      const response = await axios.post('http://localhost:8000/login/', {
+        email: this.email,
+        password: this.password,
+      });
+      // Stocker toutes les informations dans le localStorage
+      localStorage.setItem('userPseudo', response.data.pseudo);
+      localStorage.setItem('userEmail', response.data.email);
+      localStorage.setItem('userNom', response.data.nom);
+      localStorage.setItem('userPrenom', response.data.prenom);
+      this.$router.push('/menu');
+    } catch (error) {
+      console.error("Erreur de connexion :", error.response ? error.response.data : error.message);
+    }
   },
+},
+
 };
+
 </script>
 
 <style scoped>

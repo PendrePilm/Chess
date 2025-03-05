@@ -2,6 +2,7 @@
   <div id="app">
     <header>
       <img src="@/img/logo.png" alt="Logo" class="logo" />
+      <span v-if="userPseudo" class="user-pseudo">{{ userPseudo }}</span>
     </header>
     <main>
       <router-view />
@@ -12,6 +13,17 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      userPseudo: localStorage.getItem('userPseudo'),
+    };
+  },
+  watch: {
+    // Observe les changements de route pour mettre à jour le pseudo
+    '$route'() {
+      this.userPseudo = localStorage.getItem('userPseudo');
+    },
+  },
 };
 </script>
 
@@ -40,6 +52,11 @@ header .logo {
 header h1 {
   color: #e0e0e0;
   margin: 0;
+}
+
+.user-pseudo {
+  font-weight: bold;
+  color: #e0e0e0;
 }
 
 main {
