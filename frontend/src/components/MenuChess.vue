@@ -12,6 +12,7 @@
     <div class="content">
       <h1>Menu Principal</h1>
       <p>Bienvenue dans le menu principal de votre application Chess !</p>
+      <button><router-link to="/play">Jouer</router-link></button>
     </div>
   </div>
 </template>
@@ -74,5 +75,20 @@ export default {
   flex-grow: 1;
   padding: 20px;
   text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #00ff00;
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #00cc00;
 }
 </style>
